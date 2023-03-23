@@ -7,5 +7,5 @@ type Subscriber struct {
 	Messages chan *Message
 	Topics   map[string]bool
 	Active   bool
-	Mutex    sync.RWMutex
+	Mutex    *sync.RWMutex
 }
