@@ -25,13 +25,13 @@ func (s *Subscriber) AddTopic(topic string) {
 }
 
 func (s *Subscriber) RemoveTopic(topic string) {
+	s.Mutex.RLock()
+	defer s.Mutex.RUnlock()
+
 	for i, t := range s.Topics {
 		if t == topic {
 			s.Topics[i] = s.Topics[len(s.Topics)-1]
 		}
 	}
-
-	s.Mutex.RLock()
-	defer s.Mutex.RUnlock()
 	s.Topics = s.Topics[:len(s.Topics)-1]
 }
