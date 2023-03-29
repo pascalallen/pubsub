@@ -37,6 +37,16 @@ func (t *Topic) RemoveMessage(message Message) {
 	t.Messages = t.Messages[:len(t.Messages)-1]
 }
 
+func (t *Topic) HasMessage(id ulid.ULID) bool {
+	for _, m := range t.Messages {
+		if m.Id == id {
+			return true
+		}
+	}
+
+	return false
+}
+
 func (t *Topic) Publish() {
 	for _, m := range t.Messages {
 		t.Channel <- m

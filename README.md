@@ -21,11 +21,25 @@ go get github.com/pascalallen/pubsub
 ```go
 ...
 
-import "github.com/pascalallen/pubsub"
+import (
+    "fmt"
+    "github.com/pascalallen/pubsub"
+)
 
 ...
 
-// TODO: <WORK IN PROGRESS>
+c := make(chan pubsub.Message)
+t := pubsub.CreateTopic("my-topic", c)
+m := pubsub.CreateMessage([]byte("hello, jupiter!"))
+t.AddMessage(*m)
+
+s := pubsub.CreateSubscriber("my-subscription", *t, c)
+
+go t.Publish()
+
+for m := range s.Channel {
+	fmt.Printf("Message received for subscriber %s: %s\n", s.Name, m)
+}
 
 ...
 ```
