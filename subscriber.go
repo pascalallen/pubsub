@@ -9,6 +9,7 @@ type Subscriber struct {
 	Channel chan Message
 }
 
+// CreateSubscriber creates and returns a pointer instance of Subscriber.
 func CreateSubscriber(name string, topic Topic, channel chan Message) *Subscriber {
 	return &Subscriber{
 		Id:      ulid.Make(),

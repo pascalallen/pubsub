@@ -1,5 +1,6 @@
 # pubsub
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/pascalallen/pubsub.svg)](https://pkg.go.dev/github.com/pascalallen/pubsub)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/pascalallen/pubsub)
 [![Go Report Card](https://goreportcard.com/badge/github.com/pascalallen/pubsub)](https://goreportcard.com/report/github.com/pascalallen/pubsub)
 ![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/pascalallen/pubsub/go.yml?branch=main)

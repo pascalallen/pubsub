@@ -7,6 +7,7 @@ type Message struct {
 	Data []byte
 }
 
+// CreateMessage creates and returns a pointer instance of Message.
 func CreateMessage(data []byte) *Message {
 	return &Message{
 		Id:   ulid.Make(),
